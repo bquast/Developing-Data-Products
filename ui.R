@@ -3,6 +3,7 @@
 # bquast@gmail.com
 
 library(shiny)
+library(ggvis)
 
 # Define UI for application that draws a histogram
 shinyUI(fluidPage(
