@@ -3,29 +3,47 @@
 # bquast@gmail.com
 
 library(shiny)
-shinyUI(pageWithSidebar(
-  headerPanel('Illustrating Inputs'),
-  sidebarPanel(
-    numericInput('id1',
-                 'Numeric input, labeled id1',
-                 min = 0,
-                 max = 10,
-                 step = 1
-                 ),
-    
-    checkboxGroupInput('id2',
-                       'Checkbox',
-                       c('Value 1' = '1',
-                         'Value 2' = '2',
-                         'Value 3' = '3'
-                         ),
-    ),
-    
-    dateInput('date', 'Date:')
-    ),
+
+# Define UI for application that draws a histogram
+shinyUI(fluidPage(
   
-  mainPanel(
-    h3('Main Panel text')
-    )
+  # Application title
+  titlePanel("censusVis"),
+  
+  # Sidebar layout
+  sidebarLayout(
+    
+    # Sidebar panel
+    sidebarPanel(
+      
+      # Sidebar text
+      helpText( "Create demographic maps with information from the 2010 US Census."),
+      
+      # Select input
+      selectInput("var",
+                  label = "Choose a variable to display",
+                  choices = list("Percent White",
+                                 "Percent Black",
+                                 "Percent Hispanic",
+                                 "Percent Asian"),
+                  selected = 1),
+      
+      # Slider input for the number of bins
+      sliderInput("range",
+                  "Range of interest",
+                  min = 0,
+                  max = 100,
+                  value = c(0, 100)
+      )
+    ),
+    
+    # Main panel
+    mainPanel(
+      
+      # output of server process
+      mainPanel(plotOutput("map"))
+      
+      )
+    
   )
-)
+))
