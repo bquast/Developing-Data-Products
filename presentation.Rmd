@@ -8,12 +8,6 @@ output:
 runtime: shiny
 ---
 
-## R Markdown
-
-This is an R Markdown presentation. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
-
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document.
-
 ## Slide with Bullets
 
 - Bullet 1
@@ -25,21 +19,6 @@ library(knitr)
 library(ggvis, warn.conflicts = FALSE)
 library(shiny)
 library(dplyr, warn.conflicts = FALSE)
-```
-
-## Slide with R Code and Output
-
-```{r}
-summary(cars)
-```
-
-## Slide with Plot
-
-```{r, echo=FALSE, message = FALSE}
-suppressWarnings(library(ggvis))
-mtcars %>% ggvis(x = ~wt, y = ~mpg) %>%
-  layer_points() %>%
-  layer_smooths()
 ```
 
 ## An interactive plot:
