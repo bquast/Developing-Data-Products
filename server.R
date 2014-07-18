@@ -8,10 +8,6 @@ library(shiny)
 # load other packages
 library(ggvis)
 
-# load the data
-data(mtcars)
-load('child.subset.RData')
-
 # interactive server code
 shinyServer(
   function(input, output) {
