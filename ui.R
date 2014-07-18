@@ -5,18 +5,24 @@
 library(shiny)
 library(ggvis)
 
+
+
+  
+
 # Define UI for application that draws a histogram
 shinyUI(fluidPage(
   
   # Application title
-  titlePanel("censusVis"),
+  titlePanel("Iris"),
   
   # Sidebar layout
   sidebarLayout(
     
     # Sidebar panel
     sidebarPanel(
-      sliderInput("size", "Area", 10, 1000, value = 1000)
+      sliderInput("size", "Area", 10, 1000, value = 100),
+      sliderInput('span', "Span", 0.5, 1, value = 0.75),
+      sliderInput('opacity', "Point Opacity", 0, 1, value = 0.5)
     ),
     
     # Main panel
