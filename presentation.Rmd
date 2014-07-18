@@ -14,11 +14,11 @@ runtime: shiny
 - Bullet 2
 - Bullet 3
 
-```{r echo=FALSE}
+```{r echo=FALSE, message=FALSE}
 library(knitr)
-library(ggvis, warn.conflicts = FALSE)
+library(ggvis)
 library(shiny)
-library(dplyr, warn.conflicts = FALSE)
+library(dplyr)
 ```
 
 ## An interactive plot:
